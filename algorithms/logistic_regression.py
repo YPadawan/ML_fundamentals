@@ -1,6 +1,8 @@
 import scipy as sp
 import numpy as np
 
+# un commentaire 
+
 # Defining logistic return function
 def logistic(x):
     return (1.0 / (1.0 + np.exp(-x)))
