@@ -1,0 +1,11 @@
+import numpy as np
+import scipy as sp
+
+def qsntn(func, eps, X):
+    """Algorithme de Quasi-Newton
+    func (fonction): Fonction de coût convexe, continue et doublement dérivable à minimiser
+    eps (float): Précision recherchée eps > 0
+    X (np array): Données utilisée
+    """
+
+    w = np.random.random(X.shape[0])
