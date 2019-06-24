@@ -1,6 +1,24 @@
 import numpy as np
+from sklearn.datasets import make_classification
 
 def adaline(X, y, eta=0.1, T=1000):
+    """Fits the adaline algorithm
+    Parameters
+    ----------
+    X: {array like, sparse matrix}, shape (n_samples, n_features)
+       Samples
+    y: array, shape (n_samples)
+       True labels
+    eta: float, learning step
+    T: integer, number of iterations
+    Returns
+    -------
+    tuple: 
+        w: array, shape (n_features)
+        w0: float
+    Vector of weigths with a bias w0
+      
+    """
     n, d = X.shape
     w = np.random.random(d)
     w0 = 0
@@ -11,15 +29,13 @@ def adaline(X, y, eta=0.1, T=1000):
         yt = y[i]
         Xt = X[i,:]
         h = np.sign((w0 + np.dot(w,Xt.T)))
-#         h = activation(h)
         w0 += eta*(yt - h)
         w += eta * (yt - h) * Xt
         t += 1
     return w, w0
     
 if __name__ == '__main__':
-    # Simulating a table and testing the 
-    from sklearn.datasets import make_classification
+    # Simulating a table and testing the algorithm
     X, y = make_classification(n_samples=100, n_features=25)
     y_actual = np.where(y == 0, -1, y)
     w, w0 = adaline(X, y_actual)

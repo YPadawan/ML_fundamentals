@@ -3,10 +3,23 @@ from sklearn.datasets import make_classification
 
 # Perceptron function
 def perceptron(X, y, eta=0.1, T=1000):
-    """Perceptron algorithm
+    """Fits the perceptron algorithm
     Parameters
     ----------
+    X: {array like, sparse matrix}, shape (n_samples, n_features)
+       Samples
+    y: array, shape (n_samples)
+       True labels
+    eta: float, learning step
+    T: integer, number of iterations
 
+    Returns
+    -------
+    tuple: 
+        w: array, shape (n_features)
+        w0: float
+    Vector of weigths with a bias w0
+      
     """
     n, d = X.shape
     w = np.zeros(d)
@@ -25,7 +38,7 @@ def perceptron(X, y, eta=0.1, T=1000):
     return w, w0
 
 if __name__ == '__main__':
-    # Simulating a table and testing the 
+    # Simulating a table and testing the algorithm
     X, y = make_classification(n_samples=100, n_features=25)
     y_actual = np.where(y == 0, -1, y)
     w, w0 = perceptron(X, y_actual)
