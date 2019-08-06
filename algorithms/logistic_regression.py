@@ -3,6 +3,16 @@ import numpy as np
 
 # Le x correspond à formule linéaire de x
 def logistic(x):
+    """Calcul la fonction logistique
+    Parameters
+    ----------
+    x : float,
+        Valeurs auxquelles on applique une transformation logistique
+
+    Returns
+    -------
+
+    """
     return (1.0 / (1.0 + np.exp(-x)))
 
 
