@@ -11,9 +11,30 @@ def logistic(x):
 
     Returns
     -------
+    x_tr: float,
+        transformation logistique de x
+    """
+    return 1.0 / (1.0 + np.exp(-x))
+
+def stable_logistic(x):
+    """Applique la régression logistique en fonction du signe de x afin de le rendre plus stable
+
+    Parameters
+    ----------
+    x: float,
+        Valeur auxquelles on applique la transformation de x
+
+    Returns
+    -------
+    x_tr: float,
+        Transformation logistique de x
 
     """
-    return (1.0 / (1.0 + np.exp(-x)))
+    return np.where(
+        x <= 0.,
+        np.exp(x) / (1.0 + np.exp(-x)),
+        logistic(x)
+    )
 
 
 def logistic_surrogate_loss(X, y, w):
@@ -33,8 +54,9 @@ def logistic_surrogate_loss(X, y, w):
     n, d = X.shape
     S = 0.
     ps = 0.
-    ps += np.dot(X,w[:d]).sum()
-    S += (logistic(y*ps)).sum() / n
+    ps += np.dot(X, w[:d]).sum()
+    S += stable_logistic(y*ps).sum() / n
+    # S += logistic(y*ps).sum() / n
     return S
 
 
@@ -61,8 +83,8 @@ def gradient_logistic_surrogate_loss(X, y, w):
     ps += np.dot(X, w[:d]).sum()
     g[-1] = 0.
     for i in range(n):
-        g[-1] += ((logistic(y * ps) - 1.0) * y).sum()
-        g[:d] += np.dot((logistic(y * ps) - 1.0) * y, X)
+        g[-1] += ((stable_logistic(y * ps) - 1.0) * y).sum()
+        g[:d] += np.dot((stable_logistic(y * ps) - 1.0) * y, X)
 
     g /= n
     return g
