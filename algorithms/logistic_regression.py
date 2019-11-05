@@ -2,21 +2,21 @@ import numpy as np
 
 
 # Le x correspond à formule linéaire de x
+# def logistic(x):
+#     """Calcul la fonction logistique
+#     Parameters
+#     ----------
+#     x : float,
+#         Valeurs auxquelles on applique une transformation logistique
+#
+#     Returns
+#     -------
+#     x_tr: float,
+#         transformation logistique de x
+#     """
+#     return 1.0 / (1.0 + np.exp(-x))
+
 def logistic(x):
-    """Calcul la fonction logistique
-    Parameters
-    ----------
-    x : float,
-        Valeurs auxquelles on applique une transformation logistique
-
-    Returns
-    -------
-    x_tr: float,
-        transformation logistique de x
-    """
-    return 1.0 / (1.0 + np.exp(-x))
-
-def stable_logistic(x):
     """Applique la régression logistique en fonction du signe de x afin de le rendre plus stable
 
     Parameters
@@ -30,14 +30,18 @@ def stable_logistic(x):
         Transformation logistique de x
 
     """
+
+    # if x <= 0:
+    #     return np.exp(x) / (1.0 + np.exp(x))
+    # else:
+    #     return 1.0 / 1 + np.exp(-x)
     return np.where(
-        x <= 0.,
-        np.exp(x) / (1.0 + np.exp(-x)),
-        logistic(x)
+        x <= 0,
+        np.exp(x) / (1.0 + np.exp(x)),
+        1.0 / 1 + np.exp(-x)
     )
 
-
-def logistic_surrogate_loss(X, y, w):
+def logistic_surrogate_loss(w, X, y):
     """ Calcul de la fonction de coût logistique
     Paramètres
     -----------
@@ -54,13 +58,13 @@ def logistic_surrogate_loss(X, y, w):
     n, d = X.shape
     S = 0.
     ps = 0.
-    ps += np.dot(X, w[:d]).sum()
-    S += stable_logistic(y*ps).sum() / n
-    # S += logistic(y*ps).sum() / n
+    ps += np.dot(X, w[:-1]).sum()
+    # S += stable_logistic(y*ps).sum() / n
+    S += logistic(y*ps).sum() / n
     return S
 
 
-def gradient_logistic_surrogate_loss(X, y, w):
+def gradient_logistic_surrogate_loss(w, X, y):
     """Calcul du vecteur gradient Eq. (3.17) avec le biais en plus
     Paramètres
     -----------
@@ -77,14 +81,9 @@ def gradient_logistic_surrogate_loss(X, y, w):
         Vecteur gradient de la fonction de coût logistique
     """
     n, d = X.shape
-    S = 0.
     g = np.zeros(d + 1)
-    ps = 0.
-    ps += np.dot(X, w[:d]).sum()
-    g[-1] = 0.
-    for i in range(n):
-        g[-1] += ((stable_logistic(y * ps) - 1.0) * y).sum()
-        g[:d] += np.dot((stable_logistic(y * ps) - 1.0) * y, X)
-
+    ps = np.dot(X, w[:-1]).sum() + w[-1]
+    g[-1] = ((logistic(y * ps) - 1.0) * y).sum()
+    g[:d] = np.dot((logistic(y * ps) - 1.0) * y, X).sum()
     g /= n
     return g

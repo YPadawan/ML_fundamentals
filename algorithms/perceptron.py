@@ -23,8 +23,6 @@ def perceptron(X, y, eta=0.1, T=1000):
     """
     n, d = X.shape
     w = np.zeros(d)
-    n, d = X.shape
-    w = np.zeros(d)
     w0 = 0.
     t = 0
     while t <= T:

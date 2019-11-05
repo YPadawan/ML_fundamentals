@@ -60,7 +60,7 @@ def line_search(X, y, cost_func, p, g, old_loss, w_old):
     while new_loss > (old_loss + alpha * eta * pente):
         if eta < eta_min:
             w = w_old
-            break
+            break # A voir s'il ne faut pas mettre un return à la place
         else:
             if eta == 1.:
                 # Minimiseur du polynôme d'interpolation de degré 2 (Eq. 2.32)
@@ -93,6 +93,7 @@ def line_search(X, y, cost_func, p, g, old_loss, w_old):
         w = w_old + eta * p
         new_loss = cost_func(X, y, w)
         print(w)
+        print(new_loss)
     return w, new_loss
 
 
