@@ -41,49 +41,34 @@ def logistic(x):
         1.0 / 1 + np.exp(-x)
     )
 
+
+#TODO: Add documentation
 def logistic_surrogate_loss(w, X, y):
-    """ Calcul de la fonction de coût logistique
-    Paramètres
-    -----------
-    X: matrix, or sparse array shape (n, d)
-    y: array, shape (n,)
-        True labels
-    w: array, shape (d+1,)
-        Weight vectors (the +1 is for the intercept)
-    Renvoie
-    -------
-    loss : float,
-        Valeur de la fonction de coût
-    """
+    # Computing the dot product
     n, d = X.shape
-    S = 0.
-    ps = 0.
-    ps += np.dot(X, w[:-1]).sum()
-    # S += stable_logistic(y*ps).sum() / n
-    S += logistic(y*ps).sum() / n
-    return S
+    ps = np.dot(X, w[:-1]) + w[-1]
+    yps = y * ps
+#     loss = np.where(yps > 0,
+#                    np.log(1 + np.exp(-yps)),
+#                    (-yps + np.log(1 + np.exp(yps))))
+#     loss = logistic(yps)
+    loss = np.log(1. + np.exp(-yps))
+#     loss = loss.sum()
+#     loss /= n
+    return np.mean(loss)
 
 
-def gradient_logistic_surrogate_loss(w, X, y):
-    """Calcul du vecteur gradient Eq. (3.17) avec le biais en plus
-    Paramètres
-    -----------
-    X: matrix, or sparse array shape (n, d)
-    y: array, shape (n,)
-        True labels
-    w: array, shape (d,)
-        Weight vectors
-    w0: scalar,
-        bais
-    Renvoie
-    -------
-    grad : array, shape (d,)
-        Vecteur gradient de la fonction de coût logistique
-    """
+def gradient_log_surrogate_loss(w, X, y):
+    # defining dim variables
     n, d = X.shape
+    z = X.dot(w[:-1]) + w[-1]
+    z = logistic(y * z)
+    z0 = (z - 1) * y
+
+    # initiating g: gradient vector
     g = np.zeros(d + 1)
-    ps = np.dot(X, w[:-1]).sum() + w[-1]
-    g[-1] = ((logistic(y * ps) - 1.0) * y).sum()
-    g[:d] = np.dot((logistic(y * ps) - 1.0) * y, X).sum()
+    # Computing dot product
+    g[:-1] = X.T.dot(z0)
+    g[-1] = z0.sum()
     g /= n
     return g
