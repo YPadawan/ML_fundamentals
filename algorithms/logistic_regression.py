@@ -15,7 +15,7 @@ import numpy as np
 #         transformation logistique de x
 #     """
 #     return 1.0 / (1.0 + np.exp(-x))
-
+#TODO: Write documentation in english
 def logistic(x):
     """Applique la régression logistique en fonction du signe de x afin de le rendre plus stable
 
