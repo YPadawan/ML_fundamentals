@@ -3,6 +3,16 @@ import numpy as np
 from scipy.optimize import line_search
 
 
+def back_tracking_ls(x0, f, g, p, alpha0=1, rho=1, c=1e-4):
+    alpha = alpha0
+    xk = x0
+    old_fval = f(xk)
+    while f(xk + alpha * p) > f(xk) + c*alpha*np.dot(g(xk).T, p):
+        alpha = rho*alpha
+    new_fval = f(xk + alpha * p)
+    return alpha, old_fval, new_fval
+
+
 def conjugate_gradient(x0, obj_func, grd_func, args=()):
     f0 = obj_func(x0, *args)
     g0 = grd_func(x0, *args)
@@ -32,3 +42,4 @@ def conjugate_gradient(x0, obj_func, grd_func, args=()):
         print(f"Epoque {epoque} and loss is: {new_loss}")
         epoque += 1
     return x
+
