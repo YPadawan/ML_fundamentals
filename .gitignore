@@ -162,6 +162,7 @@ target/
 
 # Jupyter Notebook
 .ipynb_checkpoints
+.Rhistory
 
 # IPython
 profile_default/
@@ -186,6 +187,7 @@ celerybeat-schedule
 # Environments
 .env
 .venv
+.ml_venv
 env/
 venv/
 ENV/
@@ -211,3 +213,154 @@ dmypy.json
 .pyre/
 
 # End of https://www.gitignore.io/api/python,pycharm
+Supprimerait .ml_venv/bin/activate
+Supprimerait .ml_venv/bin/activate.csh
+Supprimerait .ml_venv/bin/activate.fish
+Supprimerait .ml_venv/bin/beeline
+Supprimerait .ml_venv/bin/beeline.cmd
+Supprimerait .ml_venv/bin/docker-image-tool.sh
+Supprimerait .ml_venv/bin/easy_install
+Supprimerait .ml_venv/bin/easy_install-3.7
+Supprimerait .ml_venv/bin/f2py
+Supprimerait .ml_venv/bin/f2py3
+Supprimerait .ml_venv/bin/f2py3.7
+Supprimerait .ml_venv/bin/find-spark-home
+Supprimerait .ml_venv/bin/find-spark-home.cmd
+Supprimerait .ml_venv/bin/find_spark_home.py
+Supprimerait .ml_venv/bin/ipdb3
+Supprimerait .ml_venv/bin/iptest
+Supprimerait .ml_venv/bin/iptest3
+Supprimerait .ml_venv/bin/ipython
+Supprimerait .ml_venv/bin/ipython3
+Supprimerait .ml_venv/bin/jsonschema
+Supprimerait .ml_venv/bin/jupyter
+Supprimerait .ml_venv/bin/jupyter-bundlerextension
+Supprimerait .ml_venv/bin/jupyter-console
+Supprimerait .ml_venv/bin/jupyter-kernel
+Supprimerait .ml_venv/bin/jupyter-kernelspec
+Supprimerait .ml_venv/bin/jupyter-migrate
+Supprimerait .ml_venv/bin/jupyter-nbconvert
+Supprimerait .ml_venv/bin/jupyter-nbextension
+Supprimerait .ml_venv/bin/jupyter-notebook
+Supprimerait .ml_venv/bin/jupyter-qtconsole
+Supprimerait .ml_venv/bin/jupyter-run
+Supprimerait .ml_venv/bin/jupyter-serverextension
+Supprimerait .ml_venv/bin/jupyter-troubleshoot
+Supprimerait .ml_venv/bin/jupyter-trust
+Supprimerait .ml_venv/bin/load-spark-env.cmd
+Supprimerait .ml_venv/bin/load-spark-env.sh
+Supprimerait .ml_venv/bin/pip
+Supprimerait .ml_venv/bin/pip3
+Supprimerait .ml_venv/bin/pip3.7
+Supprimerait .ml_venv/bin/pygmentize
+Supprimerait .ml_venv/bin/pyspark
+Supprimerait .ml_venv/bin/pyspark.cmd
+Supprimerait .ml_venv/bin/pyspark2.cmd
+Supprimerait .ml_venv/bin/python
+Supprimerait .ml_venv/bin/python3
+Supprimerait .ml_venv/bin/python3.7
+Supprimerait .ml_venv/bin/run-example
+Supprimerait .ml_venv/bin/run-example.cmd
+Supprimerait .ml_venv/bin/runxlrd.py
+Supprimerait .ml_venv/bin/spark-class
+Supprimerait .ml_venv/bin/spark-class.cmd
+Supprimerait .ml_venv/bin/spark-class2.cmd
+Supprimerait .ml_venv/bin/spark-shell
+Supprimerait .ml_venv/bin/spark-shell.cmd
+Supprimerait .ml_venv/bin/spark-shell2.cmd
+Supprimerait .ml_venv/bin/spark-sql
+Supprimerait .ml_venv/bin/spark-sql.cmd
+Supprimerait .ml_venv/bin/spark-sql2.cmd
+Supprimerait .ml_venv/bin/spark-submit
+Supprimerait .ml_venv/bin/spark-submit.cmd
+Supprimerait .ml_venv/bin/spark-submit2.cmd
+Supprimerait .ml_venv/bin/sparkR
+Supprimerait .ml_venv/bin/sparkR.cmd
+Supprimerait .ml_venv/bin/sparkR2.cmd
+Supprimerait .ml_venv/etc/
+Supprimerait .ml_venv/include/
+Supprimerait .ml_venv/lib64
+Supprimerait .ml_venv/pyvenv.cfg
+Supprimerait .ml_venv/share/doc/networkx-2.5/LICENSE.txt
+Supprimerait .ml_venv/share/doc/networkx-2.5/examples/3d_drawing/README.txt
+Supprimerait .ml_venv/share/doc/networkx-2.5/examples/3d_drawing/mayavi2_spring.py
+Supprimerait .ml_venv/share/doc/networkx-2.5/examples/README.txt
+Supprimerait .ml_venv/share/doc/networkx-2.5/examples/advanced/README.txt
+Supprimerait .ml_venv/share/doc/networkx-2.5/examples/advanced/plot_eigenvalues.py
+Supprimerait .ml_venv/share/doc/networkx-2.5/examples/advanced/plot_heavy_metal_umlaut.py
+Supprimerait .ml_venv/share/doc/networkx-2.5/examples/advanced/plot_iterated_dynamical_systems.py
+Supprimerait .ml_venv/share/doc/networkx-2.5/examples/advanced/plot_parallel_betweenness.py
+Supprimerait .ml_venv/share/doc/networkx-2.5/examples/algorithms/README.txt
+Supprimerait .ml_venv/share/doc/networkx-2.5/examples/algorithms/hartford_drug.edgelist
+Supprimerait .ml_venv/share/doc/networkx-2.5/examples/algorithms/plot_beam_search.py
+Supprimerait .ml_venv/share/doc/networkx-2.5/examples/algorithms/plot_blockmodel.py
+Supprimerait .ml_venv/share/doc/networkx-2.5/examples/algorithms/plot_davis_club.py
+Supprimerait .ml_venv/share/doc/networkx-2.5/examples/algorithms/plot_decomposition.py
+Supprimerait .ml_venv/share/doc/networkx-2.5/examples/algorithms/plot_krackhardt_centrality.py
+Supprimerait .ml_venv/share/doc/networkx-2.5/examples/algorithms/plot_rcm.py
+Supprimerait .ml_venv/share/doc/networkx-2.5/examples/basic/README.txt
+Supprimerait .ml_venv/share/doc/networkx-2.5/examples/basic/plot_properties.py
+Supprimerait .ml_venv/share/doc/networkx-2.5/examples/basic/plot_read_write.py
+Supprimerait .ml_venv/share/doc/networkx-2.5/examples/drawing/README.txt
+Supprimerait .ml_venv/share/doc/networkx-2.5/examples/drawing/chess_masters_WCC.pgn.bz2
+Supprimerait .ml_venv/share/doc/networkx-2.5/examples/drawing/knuth_miles.txt.gz
+Supprimerait .ml_venv/share/doc/networkx-2.5/examples/drawing/lanl_routes.edgelist
+Supprimerait .ml_venv/share/doc/networkx-2.5/examples/drawing/plot_atlas.py
+Supprimerait .ml_venv/share/doc/networkx-2.5/examples/drawing/plot_chess_masters.py
+Supprimerait .ml_venv/share/doc/networkx-2.5/examples/drawing/plot_circular_tree.py
+Supprimerait .ml_venv/share/doc/networkx-2.5/examples/drawing/plot_degree_histogram.py
+Supprimerait .ml_venv/share/doc/networkx-2.5/examples/drawing/plot_degree_rank.py
+Supprimerait .ml_venv/share/doc/networkx-2.5/examples/drawing/plot_directed.py
+Supprimerait .ml_venv/share/doc/networkx-2.5/examples/drawing/plot_edge_colormap.py
+Supprimerait .ml_venv/share/doc/networkx-2.5/examples/drawing/plot_ego_graph.py
+Supprimerait .ml_venv/share/doc/networkx-2.5/examples/drawing/plot_four_grids.py
+Supprimerait .ml_venv/share/doc/networkx-2.5/examples/drawing/plot_giant_component.py
+Supprimerait .ml_venv/share/doc/networkx-2.5/examples/drawing/plot_house_with_colors.py
+Supprimerait .ml_venv/share/doc/networkx-2.5/examples/drawing/plot_knuth_miles.py
+Supprimerait .ml_venv/share/doc/networkx-2.5/examples/drawing/plot_labels_and_colors.py
+Supprimerait .ml_venv/share/doc/networkx-2.5/examples/drawing/plot_lanl_routes.py
+Supprimerait .ml_venv/share/doc/networkx-2.5/examples/drawing/plot_multipartite_graph.py
+Supprimerait .ml_venv/share/doc/networkx-2.5/examples/drawing/plot_node_colormap.py
+Supprimerait .ml_venv/share/doc/networkx-2.5/examples/drawing/plot_random_geometric_graph.py
+Supprimerait .ml_venv/share/doc/networkx-2.5/examples/drawing/plot_sampson.py
+Supprimerait .ml_venv/share/doc/networkx-2.5/examples/drawing/plot_simple_path.py
+Supprimerait .ml_venv/share/doc/networkx-2.5/examples/drawing/plot_spectral_grid.py
+Supprimerait .ml_venv/share/doc/networkx-2.5/examples/drawing/plot_unix_email.py
+Supprimerait .ml_venv/share/doc/networkx-2.5/examples/drawing/plot_weighted_graph.py
+Supprimerait .ml_venv/share/doc/networkx-2.5/examples/drawing/unix_email.mbox
+Supprimerait .ml_venv/share/doc/networkx-2.5/examples/graph/README.txt
+Supprimerait .ml_venv/share/doc/networkx-2.5/examples/graph/dot_atlas.py
+Supprimerait .ml_venv/share/doc/networkx-2.5/examples/graph/plot_degree_sequence.py
+Supprimerait .ml_venv/share/doc/networkx-2.5/examples/graph/plot_erdos_renyi.py
+Supprimerait .ml_venv/share/doc/networkx-2.5/examples/graph/plot_expected_degree_sequence.py
+Supprimerait .ml_venv/share/doc/networkx-2.5/examples/graph/plot_football.py
+Supprimerait .ml_venv/share/doc/networkx-2.5/examples/graph/plot_karate_club.py
+Supprimerait .ml_venv/share/doc/networkx-2.5/examples/graph/plot_napoleon_russian_campaign.py
+Supprimerait .ml_venv/share/doc/networkx-2.5/examples/graph/plot_roget.py
+Supprimerait .ml_venv/share/doc/networkx-2.5/examples/graph/plot_words.py
+Supprimerait .ml_venv/share/doc/networkx-2.5/examples/graph/roget_dat.txt.gz
+Supprimerait .ml_venv/share/doc/networkx-2.5/examples/graph/words_dat.txt.gz
+Supprimerait .ml_venv/share/doc/networkx-2.5/examples/javascript/README.txt
+Supprimerait .ml_venv/share/doc/networkx-2.5/examples/javascript/force.py
+Supprimerait .ml_venv/share/doc/networkx-2.5/examples/javascript/force/
+Supprimerait .ml_venv/share/doc/networkx-2.5/examples/jit/README.txt
+Supprimerait .ml_venv/share/doc/networkx-2.5/examples/jit/plot_rgraph.py
+Supprimerait .ml_venv/share/doc/networkx-2.5/examples/pygraphviz/README.txt
+Supprimerait .ml_venv/share/doc/networkx-2.5/examples/pygraphviz/plot_pygraphviz_attributes.py
+Supprimerait .ml_venv/share/doc/networkx-2.5/examples/pygraphviz/plot_pygraphviz_draw.py
+Supprimerait .ml_venv/share/doc/networkx-2.5/examples/pygraphviz/plot_pygraphviz_simple.py
+Supprimerait .ml_venv/share/doc/ne
+tworkx-2.5/examples/pygraphviz/plot_write_dotfile.py
+Supprimerait .ml_venv/share/doc/networkx-2.5/examples/subclass/README.txt
+Supprimerait .ml_venv/share/doc/networkx-2.5/examples/subclass/plot_antigraph.py
+Supprimerait .ml_venv/share/doc/networkx-2.5/examples/subclass/plot_printgraph.py
+Supprimerait .ml_venv/share/doc/networkx-2.5/requirements.txt
+Supprimerait .ml_venv/share/jupyter/
+Supprimerait .ml_venv/share/man/
+Supprimerait .ml_venv/share/py4j/
+Supprimerait .ml_venv/share/python-wheels/
+Supprimerait .requirements.txt
+Supprimerait notebooks/.Rhistory
+Supprimerait notebooks/Conjugate_gradient.ipynb
+Supprimerait notebooks/Logistic regression (outdated).ipynb
+Supprimerait notebooks/gradient_descent.ipynb
