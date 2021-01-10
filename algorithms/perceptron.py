@@ -1,7 +1,7 @@
 import numpy as np
 from sklearn.datasets import make_classification
 
-# Perceptron function testing ssh with proper account 2
+# Perceptron function testing ssh with proper account 3
 def perceptron(X, y, eta=0.1, T=1000):
     """Fits the perceptron algorithm
     Parameters
