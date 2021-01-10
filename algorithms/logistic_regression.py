@@ -31,10 +31,6 @@ def logistic(x):
 
     """
 
-    # if x <= 0:
-    #     return np.exp(x) / (1.0 + np.exp(x))
-    # else:
-    #     return 1.0 / 1 + np.exp(-x)
     return np.where(
         x <= 0,
         np.exp(x) / (1.0 + np.exp(x)),
@@ -45,7 +41,6 @@ def logistic(x):
 #TODO: Add documentation
 def logistic_surrogate_loss(w, X, y):
     # Computing the dot product
-    n, d = X.shape
     ps = np.dot(X, w[:-1]) + w[-1]
     yps = y * ps
 #     loss = np.where(yps > 0,
@@ -53,12 +48,12 @@ def logistic_surrogate_loss(w, X, y):
 #                    (-yps + np.log(1 + np.exp(yps))))
 #     loss = logistic(yps)
     loss = np.log(1. + np.exp(-yps))
-#     loss = loss.sum()
-#     loss /= n
+
     return np.mean(loss)
 
 
 def gradient_log_surrogate_loss(w, X, y):
+
     # defining dim variables
     n, d = X.shape
     z = X.dot(w[:-1]) + w[-1]
@@ -67,6 +62,7 @@ def gradient_log_surrogate_loss(w, X, y):
 
     # initiating g: gradient vector
     g = np.zeros(d + 1)
+
     # Computing dot product
     g[:-1] = X.T.dot(z0)
     g[-1] = z0.sum()

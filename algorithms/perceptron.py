@@ -1,7 +1,8 @@
 import numpy as np
 from sklearn.datasets import make_classification
 
-# Perceptron function testing ssh with proper account 4
+
+# Perceptron function testing ssh
 def perceptron(X, y, eta=0.1, T=1000):
     """Fits the perceptron algorithm
     Parameters
@@ -35,7 +36,9 @@ def perceptron(X, y, eta=0.1, T=1000):
         t +=1
     return w, w0
 
+
 if __name__ == '__main__':
+
     # Simulating a table and testing the algorithm
     X, y = make_classification(n_samples=100, n_features=25)
     y_actual = np.where(y == 0, -1, y)
@@ -47,4 +50,5 @@ if __name__ == '__main__':
     assert type(w0) == np.dtype('float64')
     assert len(pred) == len(y_actual)
     assert ((pred == 1) | (pred == -1)).all()
-    
+
+

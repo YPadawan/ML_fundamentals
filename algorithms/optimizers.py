@@ -3,7 +3,8 @@ import numpy as np
 from scipy.optimize import line_search
 
 
-def back_tracking_ls(x0, f, g, p, alpha0=1, rho=1, c=1e-4):
+def back_tracking_line_search(x0, f, g, p, alpha0=1, rho=1, c=1e-4):
+
     alpha = alpha0
     xk = x0
     old_fval = f(xk)
@@ -36,7 +37,6 @@ def conjugate_gradient(x0, obj_func, grd_func, args=()):
         delta = np.dot(h, (h - g))
         beta = max(0, delta / dgg)
 
-        x_old = x
         g = h
         p = -g + beta * p
         print(f"Epoque {epoque} and loss is: {new_loss}")
