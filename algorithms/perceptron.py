@@ -1,7 +1,7 @@
 import numpy as np
 from sklearn.datasets import make_classification
 
-# Perceptron function
+# Perceptron function testing whether ssh works
 def perceptron(X, y, eta=0.1, T=1000):
     """Fits the perceptron algorithm
     Parameters
